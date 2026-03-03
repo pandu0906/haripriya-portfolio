@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. Haripriya | Portfolio</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:white;
+    color:black;
+}
+
+/* Hero Section */
+.hero{
+    display:flex;
+    flex-wrap:wrap;
+    min-height:100vh;
+}
+
+.left{
+    background:black;
+    color:white;
+    flex:1;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.left h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.left p{
+    font-size:18px;
+    color:#ccc;
+}
+
+.right{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f5f5f5;
+}
+
+.right img{
+    width:250px;
+    height:300px;
+    object-fit:cover;
+}
+
+/* Sections */
+section{
+    padding:60px;
+}
+
+.black-section{
+    background:black;
+    color:white;
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.box{
+    margin-bottom:20px;
+    padding:20px;
+    border:1px solid #ccc;
+}
+
+.black-section .box{
+    border:1px solid #444;
+}
+
+/* Skills */
+.skills span{
+    display:inline-block;
+    padding:8px 15px;
+    margin:5px;
+    border:1px solid black;
+}
+
+.black-section .skills span{
+    border:1px solid white;
+}
+
+/* Contact Button */
+button{
+    padding:12px 20px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+
+.black-section button{
+    background:white;
+    color:black;
+}
+
+.contact-details{
+    display:none;
+    margin-top:15px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#f5f5f5;
+}
+</style>
+
+<script>
+function showContact(){
+    document.getElementById("contact").style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="left">
+        <h1>M. Haripriya</h1>
+        <p>B.Tech Artificial Intelligence</p>
+        <p>Annamacharya Institute of Technology and Sciences</p>
+    </div>
+    <div class="right">
+        <!-- Change image name if needed -->
+        <img src="haripriya.jpg">
+    </div>
+</div>
+
+<!-- PROFILE -->
+<section>
+    <h2>Profile</h2>
+    <div class="box">
+        Passionate Artificial Intelligence student with strong interest in 
+        Machine Learning, Data Science and Analytics. Focused on building 
+        intelligent solutions for real-world problems.
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="black-section">
+    <h2>Skills</h2>
+    <div class="box skills">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>Power BI</span>
+        <span>Tableau</span>
+        <span>Data Analytics</span>
+        <span>Artificial Intelligence</span>
+    </div>
+</section>
+
+<!-- INTERNSHIPS -->
+<section>
+    <h2>Internships</h2>
+    <div class="box">
+        <strong>BSNL Internship (6 Months)</strong><br>
+        Gained practical exposure in real-time technical systems and 
+        communication technologies.
+    </div>
+    <div class="box">
+        <strong>Data Analytics Training Internship</strong><br>
+        Worked on data visualization and reporting techniques.
+    </div>
+</section>
+
+<!-- PROJECT -->
+<section class="black-section">
+    <h2>Project</h2>
+    <div class="box">
+        <strong>Plant Disease Detection</strong><br>
+        Developed ML model to detect plant diseases using image processing.
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+    <h2>Contact</h2>
+    <button onclick="showContact()">View Contact Details</button>
+
+    <div id="contact" class="contact-details">
+        <p>Email: haripriyam1409@email.com</p>
+        <p>Phone: 891919332299</p>
+    </div>
+</section>
+
+<footer>
+© 2026 M. Haripriya | Portfolio
+</footer>
+
+</body>
+</html>
