@@ -1,205 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M. Haripriya | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+*{
     margin:0;
-    font-family: Arial, sans-serif;
-    background:white;
-    color:black;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Hero Section */
-.hero{
-    display:flex;
-    flex-wrap:wrap;
-    min-height:100vh;
+body{
+    background: linear-gradient(135deg,#eef2ff,#e0e7ff);
+    color:#222;
+    scroll-behavior:smooth;
 }
 
-.left{
-    background:black;
+section{
+    padding:80px 10%;
+}
+
+h1,h2{
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#6366f1,#8b5cf6);
     color:white;
-    flex:1;
-    padding:60px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    transition:0.3s;
 }
 
-.left h1{
-    font-size:50px;
-    margin-bottom:10px;
+button:hover{
+    transform:scale(1.1);
 }
 
-.left p{
-    font-size:18px;
-    color:#ccc;
-}
-
-.right{
-    flex:1;
+/* HERO */
+.hero{
+    height:100vh;
     display:flex;
     align-items:center;
-    justify-content:center;
-    background:#f5f5f5;
+    justify-content:space-between;
 }
 
-.right img{
-    width:250px;
-    height:300px;
-    object-fit:cover;
+.hero-text{
+    max-width:600px;
 }
 
-/* Sections */
-section{
-    padding:60px;
+.hero h1{
+    font-size:45px;
 }
 
-.black-section{
-    background:black;
-    color:white;
+.typing{
+    color:#6366f1;
+    font-weight:600;
 }
 
-h2{
-    font-size:30px;
-    margin-bottom:20px;
+.profile-img{
+    width:280px;
+    border-radius:50%;
+    box-shadow:0 0 30px rgba(99,102,241,0.5);
 }
 
-.box{
-    margin-bottom:20px;
+/* ABOUT */
+.about p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+/* SKILLS */
+.skill{
+    margin-bottom:15px;
+}
+
+.progress{
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:10px;
+    width:0;
+    background:linear-gradient(45deg,#6366f1,#8b5cf6);
+    transition:width 2s;
+}
+
+/* PROJECTS */
+.projects-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.project-card{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
     padding:20px;
-    border:1px solid #ccc;
+    border-radius:15px;
+    flex:1 1 300px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
-.black-section .box{
-    border:1px solid #444;
+.project-card:hover{
+    transform:translateY(-10px);
 }
 
-/* Skills */
-.skills span{
-    display:inline-block;
-    padding:8px 15px;
-    margin:5px;
-    border:1px solid black;
-}
-
-.black-section .skills span{
-    border:1px solid white;
-}
-
-/* Contact Button */
-button{
-    padding:12px 20px;
-    border:none;
-    background:black;
-    color:white;
-    cursor:pointer;
-}
-
-.black-section button{
-    background:white;
-    color:black;
-}
-
-.contact-details{
-    display:none;
-    margin-top:15px;
+/* CONTACT */
+.contact p{
+    margin-bottom:10px;
 }
 
 footer{
     text-align:center;
     padding:20px;
-    background:#f5f5f5;
+    background:#6366f1;
+    color:white;
+}
+
+/* Fade Animation */
+.fade{
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
 </style>
-
-<script>
-function showContact(){
-    document.getElementById("contact").style.display="block";
-}
-</script>
-
 </head>
 
 <body>
 
 <!-- HERO SECTION -->
-<div class="hero">
-    <div class="left">
-        <h1>M. Haripriya</h1>
-        <p>B.Tech Artificial Intelligence</p>
-        <p>Annamacharya Institute of Technology and Sciences</p>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm M. Haripriya</h1>
+        <h2 class="typing"></h2>
+        <p>
+            I am currently pursuing B.Tech 3rd Year in Artificial Intelligence and Data Science 
+            at Annamacharya Institute of Technology and Science.
+        </p>
+        <br>
+        <a href="#projects"><button>View Projects</button></a>
+        <a href="#contact"><button>Contact Me</button></a>
     </div>
-    <div class="right">
-        <!-- Change image name if needed -->
-        <img src="haripriya.jpg">
-    </div>
-</div>
 
-<!-- PROFILE -->
-<section>
-    <h2>Profile</h2>
-    <div class="box">
-        Passionate Artificial Intelligence student with strong interest in 
-        Machine Learning, Data Science and Analytics. Focused on building 
-        intelligent solutions for real-world problems.
-    </div>
+    <!-- Replace profile.jpg with your image -->
+    <img src="profile.jpg" class="profile-img" alt="Profile Picture">
 </section>
 
-<!-- SKILLS -->
-<section class="black-section">
+<!-- ABOUT SECTION -->
+<section class="about fade">
+    <h2>About Me</h2>
+    <p>
+        I am a dedicated and enthusiastic Artificial Intelligence and Data Science student.
+        I have foundational knowledge in Python, Machine Learning, Data Analysis,
+        Web Development, SQL, and Power BI.
+    </p>
+    <p>
+        <strong>Education:</strong><br>
+        B.Tech in Artificial Intelligence and Data Science<br>
+        Annamacharya Institute of Technology and Science<br>
+        Currently Pursuing (3rd Year)
+    </p>
+    <p>
+        <strong>Career Objective:</strong>
+        To build innovative AI-driven solutions and contribute meaningfully 
+        to the field of Data Science and emerging technologies.
+    </p>
+</section>
+
+<!-- SKILLS SECTION -->
+<section class="fade">
     <h2>Skills</h2>
-    <div class="box skills">
-        <span>Python</span>
-        <span>Machine Learning</span>
-        <span>Power BI</span>
-        <span>Tableau</span>
-        <span>Data Analytics</span>
-        <span>Artificial Intelligence</span>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Machine Learning</p>
+        <div class="progress"><div class="progress-bar" data-width="70%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Data Analysis</p>
+        <div class="progress"><div class="progress-bar" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>HTML & CSS</p>
+        <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>SQL</p>
+        <div class="progress"><div class="progress-bar" data-width="70%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Power BI</p>
+        <div class="progress"><div class="progress-bar" data-width="75%"></div></div>
     </div>
 </section>
 
-<!-- INTERNSHIPS -->
-<section>
-    <h2>Internships</h2>
-    <div class="box">
-        <strong>BSNL Internship (6 Months)</strong><br>
-        Gained practical exposure in real-time technical systems and 
-        communication technologies.
-    </div>
-    <div class="box">
-        <strong>Data Analytics Training Internship</strong><br>
-        Worked on data visualization and reporting techniques.
+<!-- PROJECTS SECTION -->
+<section id="projects" class="fade">
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>PCI Mini Project using WEKA (DWDM)</h3>
+            <p>
+                A mini project developed using WEKA for PCI analysis in DWDM systems.
+                Involved data preprocessing, classification and performance evaluation.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Plant Disease Detection System</h3>
+            <p>
+                A machine learning-based project to detect plant diseases using image analysis,
+                helping improve agricultural productivity.
+            </p>
+        </div>
     </div>
 </section>
 
-<!-- PROJECT -->
-<section class="black-section">
-    <h2>Project</h2>
-    <div class="box">
-        <strong>Plant Disease Detection</strong><br>
-        Developed ML model to detect plant diseases using image processing.
-    </div>
-</section>
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact fade">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> haripriyam1409@email.com</p>
+    <p><strong>Phone:</strong> 8919332998</p>
+    <p><strong>Location:</strong> Tirupati</p>
 
-<!-- CONTACT -->
-<section>
-    <h2>Contact</h2>
-    <button onclick="showContact()">View Contact Details</button>
-
-    <div id="contact" class="contact-details">
-        <p>Email: haripriyam1409@email.com</p>
-        <p>Phone: 891919332299</p>
-    </div>
+    <br>
+    <form>
+        <input type="text" placeholder="Your Name" required style="padding:8px;width:100%;margin-bottom:10px;"><br>
+        <input type="email" placeholder="Your Email" required style="padding:8px;width:100%;margin-bottom:10px;"><br>
+        <textarea placeholder="Your Message" required style="padding:8px;width:100%;margin-bottom:10px;"></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
 </section>
 
 <footer>
-© 2026 M. Haripriya | Portfolio
+    © 2026 M. Haripriya | All Rights Reserved
 </footer>
+
+<script>
+// Typing Animation
+const text = "AI & Data Science Student | Aspiring Data Analyst | Tech Enthusiast";
+let index = 0;
+function typeEffect(){
+    if(index < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect,50);
+    }
+}
+typeEffect();
+
+// Fade Animation
+const fades = document.querySelectorAll('.fade');
+window.addEventListener('scroll', ()=>{
+    fades.forEach(fade=>{
+        const position = fade.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight/1.3;
+        if(position < screenPosition){
+            fade.classList.add('show');
+        }
+    });
+});
+
+// Skill Animation
+window.addEventListener("load",()=>{
+    document.querySelectorAll(".progress-bar").forEach(bar=>{
+        bar.style.width = bar.getAttribute("data-width");
+    });
+});
+</script>
 
 </body>
 </html>
